@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListDemo.MainPage">
+
+  <ListView x:Name="MyListView"
+            ItemsSource="{Binding Shop}"
+
+            HasUnevenRows="True"
+            CachingStrategy="RecycleElement">
+            
+    <!--Built in Cells-->
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <StackLayout
+                    Padding="5">
+                    <Label FontSize="Large" Text="{Binding ShopName}" />
+                    <Label Text="{Binding Description}" />
+                    <Label Text="{Binding District}"  />
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>
